@@ -18,5 +18,5 @@ public:
 	{
 	};
 	void search();
-	void add();
+	void add(std::string firstName, std::string lastName, std::string nickName, std::string phoneNumber, std::string darkestSecret);
 };
