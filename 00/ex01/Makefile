@@ -4,12 +4,12 @@ SRC=Phonebook.cpp\
 	Contact.cpp\
 	main.cpp
 
-OBJ= $(SRC:.c=.o)
+OBJ= $(SRC:.cpp=.o)
 
 ${NAME}: ${OBJ}
 	clang++ ${CPPFLAGS} ${OBJ} -o ${NAME}
 
-%.o: %.c
+%.o: %.cpp
 	clang++ -c ${CPPFLAGS} $<
 
 clean:

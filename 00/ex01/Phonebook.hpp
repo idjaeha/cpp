@@ -11,7 +11,7 @@
 class Phonebook
 {
 private:
-	Contact::Contact contacts[8];
+	Contact contacts[8];
 	int count;
 public:
 	Phonebook() : count(0)
