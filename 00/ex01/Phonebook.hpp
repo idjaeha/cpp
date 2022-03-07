@@ -12,11 +12,11 @@ class Phonebook
 {
 private:
 	Contact contacts[8];
-	int count;
+	unsigned int count;
 public:
 	Phonebook() : count(0)
 	{
 	};
-	void search();
+	void search(unsigned int index);
 	void add(std::string firstName, std::string lastName, std::string nickName, std::string phoneNumber, std::string darkestSecret);
 };
