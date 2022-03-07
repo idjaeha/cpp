@@ -20,8 +20,9 @@ void Phonebook::search(unsigned int index)
 {
 	if (index >= this->count)
 	{
-		// return;
+		return;
 	}
+
 	std::cout << "|";
 	std::cout << std::setw(10) << "FIRST_NAME";
 	std::cout << "|";
@@ -33,4 +34,27 @@ void Phonebook::search(unsigned int index)
 	std::cout << "|";
 	std::cout << std::setw(10) << "SECRET";
 	std::cout << "|" << std::endl;
+
+	std::cout << "|";
+	this->printInfo(this->contacts[index].getFirstName());
+	std::cout << "|";
+	this->printInfo(this->contacts[index].getLastName());
+	std::cout << "|";
+	this->printInfo(this->contacts[index].getNickName());
+	std::cout << "|";
+	this->printInfo(this->contacts[index].getPhoneNumber());
+	std::cout << "|";
+	this->printInfo(this->contacts[index].getDarkestSecret());
+	std::cout << "|" << std::endl;
+}
+
+void Phonebook::printInfo(std::string info)
+{
+	std::string output = info;
+
+	if (info.length() > 10)
+	{
+		output = info.substr(0, 9) + ".";
+	}
+	std::cout << std::setw(10) << output;
 }

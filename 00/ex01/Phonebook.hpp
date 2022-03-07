@@ -13,6 +13,7 @@ class Phonebook
 private:
 	Contact contacts[8];
 	unsigned int count;
+	void printInfo(std::string info);
 public:
 	Phonebook() : count(0)
 	{
