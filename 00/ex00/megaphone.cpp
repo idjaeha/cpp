@@ -6,19 +6,21 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 15:16:58 by jayi              #+#    #+#             */
-/*   Updated: 2022/03/07 15:41:54 by jayi             ###   ########.fr       */
+/*   Updated: 2022/03/07 17:25:25 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
+#include <cctype>
 
 class Megaphone
 {
 public:
-	static void speak(int count, char **inputs);
+	static void speak(unsigned int count, char **inputs);
 };
 
-void Megaphone::speak(int count, char **inputs)
+void Megaphone::speak(unsigned int count, char **inputs)
 {
 	std::string output("");
 	std::string temp("");
@@ -29,11 +31,16 @@ void Megaphone::speak(int count, char **inputs)
 	}
 	else
 	{
-		for (int idx = 1; idx <= count; idx++)
+		for (unsigned int idx = 1; idx <= count; idx++)
 		{
 			temp = inputs[idx];
 			output += temp;
 		}
+	}
+
+	for (unsigned int idx = 0; idx < output.length(); idx++)
+	{
+		output[idx] = toupper(output[idx]);
 	}
 
 	std::cout << output << std::endl;
