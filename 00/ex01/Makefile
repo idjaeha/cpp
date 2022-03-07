@@ -1,7 +1,10 @@
-NAME=megaphone
+NAME=Phonebook
 CPPFLAGS=-Wall -Wextra -Werror
-SRC=megaphone.cpp
-OBJ=megaphone.o
+SRC=Phonebook.cpp\
+	Contact.cpp\
+	main.cpp
+
+OBJ= $(SRC:.c=.o)
 
 ${NAME}: ${OBJ}
 	clang++ ${CPPFLAGS} ${OBJ} -o ${NAME}

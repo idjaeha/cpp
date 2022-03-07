@@ -4,7 +4,7 @@ void Phonebook::add(std::string firstName, std::string lastName, std::string nic
 {
 	if (this->count >= 8)
 	{
-		return ;
+		return;
 	}
 	contacts[this->count].setFirstName(firstName);
 	contacts[this->count].setLastName(lastName);
