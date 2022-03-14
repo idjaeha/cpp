@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 08:21:37 by jayi              #+#    #+#             */
-/*   Updated: 2022/03/14 08:33:43 by jayi             ###   ########.fr       */
+/*   Updated: 2022/03/14 08:35:43 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ void selector::run() {
 		std::cout << ">> ";
 		std::cin >> command;
 
-		if (command.compare("ADD") == 0)
+		if (command.compare(COMMAND_ADD) == 0)
 			std::cout << "ADD를 입력하셨습니다." << std::endl;
-		else if (command.compare("SEARCH") == 0)
+		else if (command.compare(COMMAND_SEARCH) == 0)
 			std::cout << "SEARCH를 입력하셨습니다." << std::endl;
-		else if (command.compare("EXIT") == 0)
+		else if (command.compare(COMMAND_EXIT) == 0)
 		{
 			std::cout << "EXIT를 입력하셨습니다." << std::endl;
 			break;
