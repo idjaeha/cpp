@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 08:50:30 by jayi              #+#    #+#             */
-/*   Updated: 2022/03/14 09:17:17 by jayi             ###   ########.fr       */
+/*   Updated: 2022/03/14 10:55:52 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,3 +69,7 @@ void phonebook::printInfo(std::string info)
 	}
 	std::cout << std::setw(10) << output;
 }
+
+phonebook::phonebook(void) : count(0)
+	{
+	};

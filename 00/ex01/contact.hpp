@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 08:50:23 by jayi              #+#    #+#             */
-/*   Updated: 2022/03/14 09:17:07 by jayi             ###   ########.fr       */
+/*   Updated: 2022/03/14 10:55:15 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ public:
 	void setPhoneNumber(std::string phoneNumber);
 	void setDarkestSecret(std::string darkestSecret);
 
-	std::string getFirstName();
-	std::string getLastName();
-	std::string getNickName();
-	std::string getPhoneNumber();
-	std::string getDarkestSecret();
+	std::string getFirstName(void);
+	std::string getLastName(void);
+	std::string getNickName(void);
+	std::string getPhoneNumber(void);
+	std::string getDarkestSecret(void);
 };
 
 #endif

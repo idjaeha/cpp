@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 08:50:32 by jayi              #+#    #+#             */
-/*   Updated: 2022/03/14 09:17:00 by jayi             ###   ########.fr       */
+/*   Updated: 2022/03/14 10:55:59 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,7 @@ private:
 	unsigned int count;
 	void printInfo(std::string info);
 public:
-	phonebook() : count(0)
-	{
-	};
+	phonebook(void);
 	void search(unsigned int index);
 	void add(std::string firstName, std::string lastName, std::string nickName, std::string phoneNumber, std::string darkestSecret);
 };

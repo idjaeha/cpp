@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 08:50:26 by jayi              #+#    #+#             */
-/*   Updated: 2022/03/14 08:50:26 by jayi             ###   ########.fr       */
+/*   Updated: 2022/03/14 10:55:07 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,27 +38,27 @@ void contact::setDarkestSecret(std::string darkestSecret)
 	this->darkestSecret = darkestSecret;
 }
 
-std::string contact::getFirstName()
+std::string contact::getFirstName(void)
 {
 	return firstName;
 }
 
-std::string contact::getLastName()
+std::string contact::getLastName(void)
 {
 	return lastName;
 }
 
-std::string contact::getNickName()
+std::string contact::getNickName(void)
 {
 	return nickName;
 }
 
-std::string contact::getPhoneNumber()
+std::string contact::getPhoneNumber(void)
 {
 	return phoneNumber;
 }
 
-std::string contact::getDarkestSecret()
+std::string contact::getDarkestSecret(void)
 {
 	return darkestSecret;
 }
