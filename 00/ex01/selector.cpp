@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 08:21:37 by jayi              #+#    #+#             */
-/*   Updated: 2022/03/14 09:22:10 by jayi             ###   ########.fr       */
+/*   Updated: 2022/03/14 09:32:12 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void selector::run(phonebook *pb) {
 
 	while (true)
 	{
-		std::cin.clear();
 		std::cout << "----------------------------------------------" << std::endl;
 		std::cout << "아래 명렁어 중 하나를 입력해주세요." << std::endl;
 		std::cout << "- ADD" << std::endl;
@@ -52,10 +51,17 @@ void selector::run(phonebook *pb) {
 		}
 		else if (command.compare(COMMAND_SEARCH) == 0)
 		{
-			unsigned int index;
+			unsigned int index = 100;
 
 			std::cout << "원하는 인덱스를 입력해주세요. >> ";
 			std::cin >> index;
+			if (std::cin.fail() == true)
+			{
+				std::cin.clear();
+				std::cin.ignore(100, '\n');
+				std::cout << "잘못된 인덱스입니다." << std::endl;
+				continue ;
+			}
 			
 			pb->search(index);
 		}

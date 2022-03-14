@@ -1,5 +1,17 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/03/14 10:00:12 by jayi              #+#    #+#              #
+#    Updated: 2022/03/14 10:10:22 by jayi             ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME=phonebook
-CPPFLAGS=-Wall -Wextra -Werror
+CPPFLAGS=-Wall -Wextra -Werror -std=c++98 
 SRC=phonebook.cpp\
 	contact.cpp\
 	selector.cpp\
@@ -8,10 +20,10 @@ SRC=phonebook.cpp\
 OBJ= $(SRC:.cpp=.o)
 
 ${NAME}: ${OBJ}
-	clang++ -std=c++98 ${CPPFLAGS} ${OBJ} -o ${NAME}
+	clang++ ${CPPFLAGS} ${OBJ} -o ${NAME}
 
 %.o: %.cpp
-	clang++ -std=c++98 -c ${CPPFLAGS} $<
+	clang++-c ${CPPFLAGS} $<
 
 clean:
 	rm -rf ${OBJ}

@@ -1,12 +1,14 @@
-NAME=megaphone
-CPPFLAGS=-Wall -Wextra -Werror
-SRC=megaphone.cpp
-OBJ=megaphone.o
+NAME=tests
+CPPFLAGS=-Wall -Wextra -Werror -std=c++98
+SRC=tests.cpp\
+	Account.cpp
+
+OBJ= $(SRC:.cpp=.o)
 
 ${NAME}: ${OBJ}
 	clang++ ${CPPFLAGS} ${OBJ} -o ${NAME}
 
-%.o: %.c
+%.o: %.cpp
 	clang++ -c ${CPPFLAGS} $<
 
 clean:
