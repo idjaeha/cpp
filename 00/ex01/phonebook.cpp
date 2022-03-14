@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/14 08:50:30 by jayi              #+#    #+#             */
+/*   Updated: 2022/03/14 08:55:26 by jayi             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "phonebook.hpp"
 #include <iostream>
 #include <iomanip>
@@ -20,6 +32,7 @@ void phonebook::search(unsigned int index)
 {
 	if (index >= this->count)
 	{
+		std::cout << "잘못된 인덱스입니다." << std::endl;
 		return;
 	}
 

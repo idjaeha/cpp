@@ -1,11 +1,17 @@
-/*
-** phonebook
-** 1. 입력값 받기 (ADD, SEARCH, EXIT)
-** 2. 입력값에 대한 수행
-** 3. 
-** 
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/14 08:50:32 by jayi              #+#    #+#             */
+/*   Updated: 2022/03/14 08:55:27 by jayi             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#ifndef PHONEBOOK_H
+#define PHONEBOOK_H
 #include "contact.hpp"
 
 class phonebook
@@ -21,3 +27,5 @@ public:
 	void search(unsigned int index);
 	void add(std::string firstName, std::string lastName, std::string nickName, std::string phoneNumber, std::string darkestSecret);
 };
+
+#endif

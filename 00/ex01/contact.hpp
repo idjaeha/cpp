@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   contact.hpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/14 08:50:23 by jayi              #+#    #+#             */
+/*   Updated: 2022/03/14 08:52:09 by jayi             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef CONTACT_H
+#define CONTACT_H
 #include <string>
 
 class contact
@@ -27,3 +41,5 @@ public:
 	std::string getPhoneNumber();
 	std::string getDarkestSecret();
 };
+
+#endif

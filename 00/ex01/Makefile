@@ -8,10 +8,10 @@ SRC=phonebook.cpp\
 OBJ= $(SRC:.cpp=.o)
 
 ${NAME}: ${OBJ}
-	clang++ ${CPPFLAGS} ${OBJ} -o ${NAME}
+	clang++ -std=c++98 ${CPPFLAGS} ${OBJ} -o ${NAME}
 
 %.o: %.cpp
-	clang++ -c ${CPPFLAGS} $<
+	clang++ -std=c++98 -c ${CPPFLAGS} $<
 
 clean:
 	rm -rf ${OBJ}
