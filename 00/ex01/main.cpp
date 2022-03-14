@@ -1,9 +1,12 @@
-#include "Phonebook.hpp"
+#include "phonebook.hpp"
+#include "selector.hpp"
 
 int	main(void)
 {
-	Phonebook phonebook;
+	phonebook pb;
+	selector sl;
 
-	phonebook.add("1", "2", "3", "4", "12345678901");
-	phonebook.search(0);
+	pb.add("1", "2", "3", "4", "12345678901");
+	pb.search(0);
+	sl.run();
 }

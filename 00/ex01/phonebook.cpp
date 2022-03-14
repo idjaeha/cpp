@@ -1,8 +1,8 @@
-#include "Phonebook.hpp"
+#include "phonebook.hpp"
 #include <iostream>
 #include <iomanip>
 
-void Phonebook::add(std::string firstName, std::string lastName, std::string nickName, std::string phoneNumber, std::string darkestSecret)
+void phonebook::add(std::string firstName, std::string lastName, std::string nickName, std::string phoneNumber, std::string darkestSecret)
 {
 	if (this->count >= 8)
 	{
@@ -16,7 +16,7 @@ void Phonebook::add(std::string firstName, std::string lastName, std::string nic
 	this->count++;
 }
 
-void Phonebook::search(unsigned int index)
+void phonebook::search(unsigned int index)
 {
 	if (index >= this->count)
 	{
@@ -48,7 +48,7 @@ void Phonebook::search(unsigned int index)
 	std::cout << "|" << std::endl;
 }
 
-void Phonebook::printInfo(std::string info)
+void phonebook::printInfo(std::string info)
 {
 	std::string output = info;
 

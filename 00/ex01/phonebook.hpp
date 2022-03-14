@@ -1,21 +1,21 @@
 /*
-** Phonebook
+** phonebook
 ** 1. 입력값 받기 (ADD, SEARCH, EXIT)
 ** 2. 입력값에 대한 수행
 ** 3. 
 ** 
 */
 
-#include "Contact.hpp"
+#include "contact.hpp"
 
-class Phonebook
+class phonebook
 {
 private:
-	Contact contacts[8];
+	contact contacts[8];
 	unsigned int count;
 	void printInfo(std::string info);
 public:
-	Phonebook() : count(0)
+	phonebook() : count(0)
 	{
 	};
 	void search(unsigned int index);

@@ -14,13 +14,13 @@
 #include <string>
 #include <cctype>
 
-class Megaphone
+class megaphone
 {
 public:
 	static void speak(unsigned int count, char **inputs);
 };
 
-void Megaphone::speak(unsigned int count, char **inputs)
+void megaphone::speak(unsigned int count, char **inputs)
 {
 	std::string output("");
 	std::string temp("");
@@ -48,5 +48,5 @@ void Megaphone::speak(unsigned int count, char **inputs)
 
 int main(int argc, char **argv)
 {
-	Megaphone::speak(argc - 1, argv);
+	megaphone::speak(argc - 1, argv);
 }

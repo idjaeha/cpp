@@ -1,7 +1,8 @@
-NAME=Phonebook
+NAME=phonebook
 CPPFLAGS=-Wall -Wextra -Werror
-SRC=Phonebook.cpp\
-	Contact.cpp\
+SRC=phonebook.cpp\
+	contact.cpp\
+	selector.cpp\
 	main.cpp
 
 OBJ= $(SRC:.cpp=.o)

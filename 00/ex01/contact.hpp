@@ -1,6 +1,6 @@
 #include <string>
 
-class Contact
+class contact
 {
 private:
 	std::string firstName;
@@ -10,7 +10,7 @@ private:
 	std::string darkestSecret;
 
 public:
-	Contact():
+	contact():
 		firstName(""), lastName(""), nickName(""), phoneNumber(""), darkestSecret("")
 		{
 		}
