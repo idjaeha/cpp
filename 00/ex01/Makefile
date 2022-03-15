@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+         #
+#    By: jayi <jayi@student.42.kr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/14 10:00:12 by jayi              #+#    #+#              #
-#    Updated: 2022/03/14 10:10:22 by jayi             ###   ########.fr        #
+#    Updated: 2022/03/15 00:36:19 by jayi             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ ${NAME}: ${OBJ}
 	clang++ ${CPPFLAGS} ${OBJ} -o ${NAME}
 
 %.o: %.cpp
-	clang++-c ${CPPFLAGS} $<
+	clang++ -c ${CPPFLAGS} $<
 
 clean:
 	rm -rf ${OBJ}

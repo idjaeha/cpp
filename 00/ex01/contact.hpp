@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42.kr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 08:50:23 by jayi              #+#    #+#             */
-/*   Updated: 2022/03/14 10:55:15 by jayi             ###   ########.fr       */
+/*   Updated: 2022/03/15 00:35:51 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,7 @@ private:
 	std::string darkestSecret;
 
 public:
-	contact():
-		firstName(""), lastName(""), nickName(""), phoneNumber(""), darkestSecret("")
-		{
-		}
+	contact();
 
 	void setFirstName(std::string firstName);
 	void setLastName(std::string lastName);

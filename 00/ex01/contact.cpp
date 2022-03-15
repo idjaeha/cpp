@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42.kr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 08:50:26 by jayi              #+#    #+#             */
-/*   Updated: 2022/03/14 10:55:07 by jayi             ###   ########.fr       */
+/*   Updated: 2022/03/15 00:36:13 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,8 @@ std::string contact::getPhoneNumber(void)
 std::string contact::getDarkestSecret(void)
 {
 	return darkestSecret;
+}
+
+contact::contact() : firstName(""), lastName(""), nickName(""), phoneNumber(""), darkestSecret("")
+{
 }
