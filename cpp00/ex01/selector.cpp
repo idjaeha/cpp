@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 08:21:37 by jayi              #+#    #+#             */
-/*   Updated: 2022/03/17 08:30:24 by jayi             ###   ########.fr       */
+/*   Updated: 2022/03/17 08:36:39 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 #include <sstream>
 #include <stdlib.h>
 
-void getlineNotAllowedEOF(std::string input)
+void getlineNotAllowedEOF(std::string &input)
 {
-	std::getline(std::cin, command);
+	std::getline(std::cin, input);
 	if (std::cin.eof())
 		exit(0);
 }
@@ -35,9 +35,7 @@ void selector::run(phonebook *pb) {
 		std::cout << "- EXIT" << std::endl;
 		std::cout << "----------------------------------------------" << std::endl;
 		std::cout << ">> ";
-		std::getline(std::cin, command);
-		if (std::cin.eof())
-			break;
+		getlineNotAllowedEOF(command);
 
 		if (command.compare(COMMAND_ADD) == 0)
 		{
@@ -48,29 +46,19 @@ void selector::run(phonebook *pb) {
 			std::string darkestSecret;
 
 			std::cout << "이름을 입력해주세요. >> ";
-			std::getline(std::cin, firstName);
-			if (std::cin.eof())
-				break;
+			getlineNotAllowedEOF(firstName);
 
 			std::cout << "성을 입력해주세요. >> ";
-			std::getline(std::cin, lastName);
-			if (std::cin.eof())
-				break;
+			getlineNotAllowedEOF(lastName);
 
 			std::cout << "별명을 입력해주세요. >> ";
-			std::getline(std::cin, nickName);
-			if (std::cin.eof())
-				break;
+			getlineNotAllowedEOF(nickName);
 
 			std::cout << "휴대폰 번호을 입력해주세요. >> ";
-			std::getline(std::cin, phoneNumber);
-			if (std::cin.eof())
-				break;
+			getlineNotAllowedEOF(phoneNumber);
 			
 			std::cout << "비밀을 입력해주세요. >> ";
-			std::getline(std::cin, darkestSecret);
-			if (std::cin.eof())
-				break;
+			getlineNotAllowedEOF(darkestSecret);
 
 			pb->add(firstName, lastName, nickName, phoneNumber, darkestSecret);
 		}
@@ -89,9 +77,7 @@ void selector::run(phonebook *pb) {
 				pb->search(idx, idx == 0, false);
 
 			std::cout << "원하는 인덱스를 입력해주세요. >> ";
-			std::getline(std::cin, sIndex);
-			if (std::cin.eof())
-				break;
+			getlineNotAllowedEOF(sIndex);
 			std::stringstream ssInt(sIndex);
 			ssInt >> index;
 			if (ssInt.fail())
