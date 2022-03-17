@@ -6,7 +6,7 @@
 #    By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/14 10:00:12 by jayi              #+#    #+#              #
-#    Updated: 2022/03/17 09:05:48 by jayi             ###   ########.fr        #
+#    Updated: 2022/03/17 11:11:32 by jayi             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,7 @@ NAME=Zombie
 CPPFLAGS=-Wall -Wextra -Werror -std=c++98 
 SRC=main.cpp\
 	Zombie.cpp\
-	newZombie.cpp\
-	randomChump.cpp
+	zombieHorde.cpp
 
 HEADER=	Zombie.hpp
 
