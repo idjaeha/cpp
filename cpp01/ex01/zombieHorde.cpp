@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 08:48:19 by jayi              #+#    #+#             */
-/*   Updated: 2022/03/17 09:38:43 by jayi             ###   ########.fr       */
+/*   Created: 2022/03/17 09:43:54 by jayi              #+#    #+#             */
+/*   Updated: 2022/03/17 09:44:02 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-#define ZOMBIE_H
+#include "Zombie.hpp"
 
-#include <string>
-#include <iostream>
-
-#define CREATE_MESSAGE		"Goooooooooooooood..."
-#define ANNOUNCE_MESSAGE	"BraiiiiiiinnnzzzZ..."
-#define DESTRUCT_MESSAGE	"Diiiiiiiiiiiiiied..."
-
-class Zombie
+Zombie* zombieHorde( int N, std::string name )
 {
-private:
-	std::string name;
-public:
-	Zombie(std::string name);
-	~Zombie();
-	void announce(void);
-};
-
-#endif
+	
+}
