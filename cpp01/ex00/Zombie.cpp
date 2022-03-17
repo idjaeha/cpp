@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 08:48:30 by jayi              #+#    #+#             */
-/*   Updated: 2022/03/17 09:03:43 by jayi             ###   ########.fr       */
+/*   Updated: 2022/03/17 09:09:27 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ void Zombie::announce(void)
 Zombie::~Zombie()
 {
 	printName(this->name);
-	std:::cout << "Diiiiiiiiiied..." << std::endl;
+	std::cout << "Diiiiiiiiiied..." << std::endl;
 }
 
 Zombie::Zombie(std::string name)
 {
 	this->name = name;
 	printName(name);
-	std:::cout << "Goooooooood..." << std::endl;
+	std::cout << "Goooooooood..." << std::endl;
 }
