@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 08:48:19 by jayi              #+#    #+#             */
-/*   Updated: 2022/03/17 08:54:54 by jayi             ###   ########.fr       */
+/*   Updated: 2022/03/17 09:03:38 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Zombie
 private:
 	std::string name;
 public:
-	Zombie();
+	Zombie(std::string name);
 	~Zombie();
 	void announce(void);
 }
