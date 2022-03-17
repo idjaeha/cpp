@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 08:21:37 by jayi              #+#    #+#             */
-/*   Updated: 2022/03/16 20:19:41 by jayi             ###   ########.fr       */
+/*   Updated: 2022/03/17 08:30:24 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <stdlib.h>
+
+void getlineNotAllowedEOF(std::string input)
+{
+	std::getline(std::cin, command);
+	if (std::cin.eof())
+		exit(0);
+}
 
 void selector::run(phonebook *pb) {
 	std::string command;
