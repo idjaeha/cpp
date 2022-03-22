@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 09:59:52 by jayi              #+#    #+#             */
-/*   Updated: 2022/03/22 10:18:27 by jayi             ###   ########.fr       */
+/*   Updated: 2022/03/22 10:35:56 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,14 @@ void	Karen::error(void)
 void	Karen::complain(std::string level)
 {
 	std::string flag[4] = {"debug", "info", "warning", "error"};
+	void (Karen::*func[4])() = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
 
-	(void)level;
-}
-
-Karen::Karen(void) : func({Karen::debug, Karen::info, Karen::warning, Karen::error})
-{
+	int idx = 0;
+	while (flag[idx] != level && idx != 4)
+		idx++;
 	
+	while (idx == 4)
+		return ;
+
+	(this->*func[idx])();
 }
