@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 08:11:06 by jayi              #+#    #+#             */
-/*   Updated: 2022/03/22 09:49:45 by jayi             ###   ########.fr       */
+/*   Updated: 2022/03/22 11:45:44 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,14 @@ int main(int argc, char *argv[])
 		std::string fileDst("");
 		char buf[MAX_BUF];
 
-		// 파일을 연다.
 		std::fstream inputFile;
 		inputFile.open(inputFileName);
-
-		// 파일이 잘 열렸는지 확인한다.
 		if (inputFile.fail())
 		{
 			std::cerr << "\"" << inputFileName << "\" : 파일을 찾을 수 없습니다." << std::endl;
 			return (0);
 		}
 
-		// 문자열을 저장한다.
 		while (inputFile.getline(buf, sizeof(buf)))
 		{
 			std::string temp(buf);
@@ -56,21 +52,18 @@ int main(int argc, char *argv[])
 		}
 		inputFile.close();
 
-		// 쓰기 파일을 연다.
 		std::fstream outputFile;
 		std::string outputFileName(inputFileName);
 		outputFileName += ".replace";
 		const char *c_outputFileName = outputFileName.c_str();
-		outputFile.open(c_outputFileName, std::ios_base::out);
 
-		// 파일이 잘 열렸는지 확인한다.
+		outputFile.open(c_outputFileName, std::ios_base::out);
 		if (outputFile.fail())
 		{
-			std::cerr << "\"" << c_outputFileName << "\" : 파일을 찾을 수 없습니다." << std::endl;
+			std::cerr << "\"" << outputFileName << "\" : 파일을 찾을 수 없습니다." << std::endl;
 			return (0);
 		}
 
-		// 문자열을 대체한다.
 		size_t start;
 		while ((start = fileSrc.find(dst)) != std::string::npos)
 		{
@@ -81,7 +74,6 @@ int main(int argc, char *argv[])
 		}
 		fileDst += fileSrc;
 
-		// 문자열을 저장한다.
 		outputFile << fileDst;
 		outputFile.close();
 	}
