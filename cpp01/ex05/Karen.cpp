@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 09:59:52 by jayi              #+#    #+#             */
-/*   Updated: 2022/03/22 10:35:56 by jayi             ###   ########.fr       */
+/*   Updated: 2022/03/22 11:48:32 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,5 @@ void	Karen::complain(std::string level)
 	while (flag[idx] != level && idx != 4)
 		idx++;
 	
-	while (idx == 4)
-		return ;
-
-	(this->*func[idx])();
+	idx != 4 && (this->*func[idx])();
 }
