@@ -6,7 +6,7 @@
 /*   By: jaehayi <jaehayi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 12:53:15 by jayi              #+#    #+#             */
-/*   Updated: 2022/03/28 09:32:25 by jaehayi          ###   ########.fr       */
+/*   Updated: 2022/03/28 10:41:12 by jaehayi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define FIXED_H
 
 #include <iostream>
-#include <math.h>
+#include <cmath>
 
 class Fixed {
 private:
