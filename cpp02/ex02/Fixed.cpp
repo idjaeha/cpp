@@ -6,7 +6,7 @@
 /*   By: jaehayi <jaehayi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 13:03:48 by jayi              #+#    #+#             */
-/*   Updated: 2022/03/28 10:05:21 by jaehayi          ###   ########.fr       */
+/*   Updated: 2022/03/28 10:35:52 by jaehayi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,26 +69,149 @@ int Fixed::toInt(void) const
 	return (int)roundf((float)this->fixedPointNumber / (1 << fractionalBits));
 }
 
-Fixed &Fixed::operator*(const Fixed &fixed)
+bool Fixed::operator>(const Fixed &fixed)
 {
-	this->setRawBits(this->fixedPointNumber * fixed.fixedPointNumber);
+	return this->toFloat() > fixed.toFloat();
+}
+
+bool Fixed::operator<(const Fixed &fixed)
+{
+	return this->toFloat() < fixed.toFloat();
+}
+
+bool Fixed::operator>=(const Fixed &fixed)
+{
+	return this->toFloat() >= fixed.toFloat();
+}
+
+bool Fixed::operator<=(const Fixed &fixed)
+{
+	return this->toFloat() <= fixed.toFloat();
+}
+
+bool Fixed::operator==(const Fixed &fixed)
+{
+	return this->toFloat() == fixed.toFloat();
+}
+
+bool Fixed::operator!=(const Fixed &fixed)
+{
+	return this->toFloat() != fixed.toFloat();
+}
+
+Fixed Fixed::operator*(const Fixed &fixed)
+{
+	return (Fixed(this->toFloat() * fixed.toFloat()));
+}
+
+Fixed Fixed::operator-(const Fixed &fixed)
+{
+	return (Fixed(this->toFloat() - fixed.toFloat()));
+}
+
+Fixed Fixed::operator/(const Fixed &fixed)
+{
+	return (Fixed(this->toFloat() / fixed.toFloat()));
+}
+
+Fixed Fixed::operator+(const Fixed &fixed)
+{
+	return (Fixed(this->toFloat() + fixed.toFloat()));
 }
 
 Fixed &Fixed::operator++(void)
 {
-	this->setRawBits(this->fixedPointNumber + (1 << fractionalBits));
+	this->fixedPointNumber++;
 	return *this;
 }
 
-Fixed &Fixed::operator++(int num)
+Fixed &Fixed::operator--(void)
 {
-	this->setRawBits(this->fixedPointNumber + (1 << fractionalBits));
+	this->fixedPointNumber--;
 	return *this;
+}
+
+Fixed Fixed::operator++(int num)
+{
+	Fixed temp(*this);
+
+	if (num >= 0)
+	{
+		for (int _ = 0; _ <= num; _++)
+		{
+			++(*this);
+		}
+	}
+	else
+	{
+		for (int _ = 0; _ <= num * -1; _++)
+		{
+			--(*this);
+		}
+	}
+	return temp;
+}
+
+Fixed Fixed::operator--(int num)
+{
+	Fixed temp(*this);
+
+	if (num >= 0)
+	{
+		for (int _ = 0; _ <= num; _++)
+		{
+			--(*this);
+		}
+	}
+	else
+	{
+		for (int _ = 0; _ <= num * -1; _++)
+		{
+			++(*this);
+		}
+	}
+	return temp;
+}
+
+Fixed const &Fixed::max(Fixed const &fixed1, Fixed const &fixed2)
+{
+	if (fixed1.toFloat() > fixed2.toFloat())
+	{
+		return fixed1;
+	}
+	else
+	{
+		return fixed2;
+	}
+}
+
+Fixed const &Fixed::min(Fixed const &fixed1, Fixed const &fixed2)
+{
+	if (fixed1.toFloat() < fixed2.toFloat())
+	{
+		return fixed1;
+	}
+	else
+	{
+		return fixed2;
+	}
 }
 
 Fixed &Fixed::max(Fixed &fixed1, Fixed &fixed2)
 {
-	if (fixed1.getRawBits() > fixed2.getRawBits())
+	if (fixed1.toFloat() > fixed2.toFloat())
+	{
+		return fixed1;
+	}
+	else
+	{
+		return fixed2;
+	}
+}
+
+Fixed &Fixed::min(Fixed &fixed1, Fixed &fixed2)
+{
+	if (fixed1.toFloat() < fixed2.toFloat())
 	{
 		return fixed1;
 	}

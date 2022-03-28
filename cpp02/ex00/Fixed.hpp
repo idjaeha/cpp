@@ -3,18 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: jaehayi <jaehayi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 12:53:15 by jayi              #+#    #+#             */
-/*   Updated: 2022/03/22 13:06:36 by jayi             ###   ########.fr       */
+/*   Updated: 2022/03/28 09:52:37 by jaehayi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
+#ifndef FIXED_H
+#define FIXED_H
 class Fixed {
 private:
-	int rawBits;
+	int fixedPointNumber;
+	static const int fractionalBits = 8;
 public:
 	Fixed(void);
 	Fixed(const Fixed&);
@@ -23,3 +26,5 @@ public:
 	int	getRawBits(void) const;
 	void setRawBits(int const raw);
 };
+
+#endif
