@@ -6,16 +6,20 @@
 #    By: jaehayi <jaehayi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/14 10:00:12 by jayi              #+#    #+#              #
-#    Updated: 2022/03/28 08:57:29 by jaehayi          ###   ########.fr        #
+#    Updated: 2022/03/28 10:44:11 by jaehayi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=a.out
 CPPFLAGS=-Wall -Wextra -Werror -std=c++98 
 SRC=main.cpp\
-	Fixed.cpp
+	Fixed.cpp\
+	bsp.cpp\
+	Point.cpp
 
-HEADER=Fixed.hpp
+
+HEADER=Fixed.hpp\
+		Point.hpp
 
 OBJ= $(SRC:.cpp=.o)
 
