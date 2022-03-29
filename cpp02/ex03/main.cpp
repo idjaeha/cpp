@@ -6,7 +6,7 @@
 /*   By: jaehayi <jaehayi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 12:48:48 by jayi              #+#    #+#             */
-/*   Updated: 2022/03/29 12:16:40 by jaehayi          ###   ########.fr       */
+/*   Updated: 2022/03/29 12:27:28 by jaehayi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 float getLength(float x1, float y1, float x2, float y2)
 {
-	return sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2));
+	return mySqrt(myPow(x1 - x2) + myPow(y1 - y2));
 }
 
 bool isTriangle(float x1, float y1, float x2, float y2, float x3, float y3)
@@ -44,13 +44,13 @@ int main( void )
 	float y1 = 0;
 
 	float x2 = 3;
-	float y2 = 0;
+	float y2 = 5;
 
-	float x3 = 0;
+	float x3 = 3;
 	float y3 = 3;
 
-	float targetX = 0.1;
-	float targetY = 2.5;
+	float targetX = 1;
+	float targetY = 1;
 
 	if (isTriangle(x1, y1, x2, y2, x3, y3) == false)
     {
