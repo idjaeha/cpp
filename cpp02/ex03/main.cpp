@@ -6,7 +6,7 @@
 /*   By: jaehayi <jaehayi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 12:48:48 by jayi              #+#    #+#             */
-/*   Updated: 2022/03/29 12:27:28 by jaehayi          ###   ########.fr       */
+/*   Updated: 2022/04/01 05:59:05 by jaehayi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,8 @@ int main( void )
 	if (isTriangle(x1, y1, x2, y2, x3, y3) == false)
     {
         std::cerr << "주어진 세 점이 올바르지 않습니다." << std::endl;
-        exit(1);
+        return 1;
     }
-
 	if (bsp(Point(x1, y1), Point(x2, y2), Point(x3, y3), Point(targetX, targetY)))
 	{
 		std::cout << "target은 삼각형 내부입니다." << std::endl;

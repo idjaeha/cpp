@@ -6,7 +6,7 @@
 /*   By: jaehayi <jaehayi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 10:42:28 by jaehayi           #+#    #+#             */
-/*   Updated: 2022/03/29 12:26:26 by jaehayi          ###   ########.fr       */
+/*   Updated: 2022/04/01 06:00:08 by jaehayi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ float getLength(Point const a, Point const b)
 
 bool isEqual(float a, float b)
 {
-    static const float EPS = 0.005;
+    static const float EPS = 0.005f;
 
     return (a - EPS <= b && b <= a + EPS);
 }
