@@ -3,19 +3,21 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+         #
+#    By: jaehayi <jaehayi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/14 10:00:12 by jayi              #+#    #+#              #
-#    Updated: 2022/04/07 06:59:20 by jayi             ###   ########.fr        #
+#    Updated: 2022/04/07 08:14:42 by jaehayi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=a.out
 CPPFLAGS=-Wall -Wextra -Werror -std=c++98 
-SRC=main.cpp\
-	ClapTrap.cpp
+SRC=	main.cpp\
+		ClapTrap.cpp\
+		ScavTrap.cpp
 
-HEADER=ClapTrap.hpp
+HEADER=	ClapTrap.hpp\
+		ScavTrap.hpp
 
 OBJ= $(SRC:.cpp=.o)
 

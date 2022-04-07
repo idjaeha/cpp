@@ -6,7 +6,7 @@
 /*   By: jaehayi <jaehayi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 08:58:40 by jaehayi           #+#    #+#             */
-/*   Updated: 2022/04/07 09:03:36 by jaehayi          ###   ########.fr       */
+/*   Updated: 2022/04/07 09:25:02 by jaehayi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <string>
 
 class ClapTrap {
-  private:
+  protected:
     int hitPoints;
     int energyPoints;
     int attackDamage;
