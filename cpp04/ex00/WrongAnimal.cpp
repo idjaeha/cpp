@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/15 16:12:07 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/15 17:23:53 by jayi             ###   ########.fr       */
+/*   Created: 2022/04/15 17:25:58 by jayi              #+#    #+#             */
+/*   Updated: 2022/04/15 17:25:59 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongAnimal.hpp"
 
-Cat::Cat(void) {
-    this->type = "Cat";
-    std::cout << "Create Cat !!!" << std::endl;
+WrongAnimal::WrongAnimal(void) {
+    this->type = "WrongAnimal";
+    std::cout << "Create WrongAnimal !!!" << std::endl;
 }
 
-Cat::~Cat() { std::cout << "Delete Cat !!!" << std::endl; }
+WrongAnimal::~WrongAnimal() {
+    std::cout << "Delete WrongAnimal !!!" << std::endl;
+}
 
-Cat &Cat::operator=(const Cat &ref) {
+WrongAnimal &WrongAnimal::operator=(const WrongAnimal &ref) {
     std::cout << type;
     std::cout << " copy assignment operator." << std::endl;
     if (this != &ref) {
@@ -28,13 +30,15 @@ Cat &Cat::operator=(const Cat &ref) {
     return *this;
 }
 
-Cat::Cat(const Cat &ref) {
+WrongAnimal::WrongAnimal(const WrongAnimal &ref) {
     std::cout << type;
     std::cout << " copy constructor." << std::endl;
     *this = ref;
 }
 
-void Cat::makeSound(void) const {
+void WrongAnimal::makeSound(void) const {
     std::cout << this->type;
-    std::cout << " : cat sound~~!" << std::endl;
+    std::cout << " : animal sound~~!" << std::endl;
 }
+
+std::string WrongAnimal::getType(void) const { return this->type; }

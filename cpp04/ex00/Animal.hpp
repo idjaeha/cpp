@@ -6,9 +6,12 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 16:12:24 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/15 16:35:55 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/15 17:07:15 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef ANIMAL_H
+#define ANIMAL_H
 
 #include <iostream>
 #include <string>
@@ -18,10 +21,13 @@ class Animal {
     std::string type;
 
   public:
-    void makeSound(void);
-
     Animal(void);
-    ~Animal();
+    virtual ~Animal();
     Animal &operator=(const Animal &ref);
     Animal(const Animal &ref);
+
+    virtual void makeSound(void) const;
+    std::string getType(void) const;
 };
+
+#endif

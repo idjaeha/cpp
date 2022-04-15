@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/15 16:12:24 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/15 17:03:25 by jayi             ###   ########.fr       */
+/*   Created: 2022/04/15 17:26:31 by jayi              #+#    #+#             */
+/*   Updated: 2022/04/15 17:26:39 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_H
-#define DOG_H
+#ifndef WRONG_CAT_H
+#define WRONG_CAT_H
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 #include <iostream>
 #include <string>
 
-class Dog : public Animal {
+class WrongCat : public WrongAnimal {
   public:
-    Dog(void);
-    ~Dog();
-    Dog &operator=(const Dog &ref);
-    Dog(const Dog &ref);
+    WrongCat(void);
+    ~WrongCat();
+    WrongCat &operator=(const WrongCat &ref);
+    WrongCat(const WrongCat &ref);
 
     void makeSound(void) const;
 };
