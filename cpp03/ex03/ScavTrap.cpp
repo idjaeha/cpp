@@ -3,35 +3,70 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaehayi <jaehayi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 08:14:58 by jaehayi           #+#    #+#             */
-/*   Updated: 2022/04/07 09:41:45 by jaehayi          ###   ########.fr       */
+/*   Updated: 2022/04/14 19:55:24 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void) : ClapTrap(100, 50, 20, "Unknown") {
+ScavTrap::ScavTrap(void) {
+    this->ScavTrap::name = "Unknown";
+    this->ScavTrap::hitPoints = 100;
+    this->ScavTrap::energyPoints = 50;
+    this->ScavTrap::attackDamage = 20;
+
     std::cout << "ScavTrap ";
     std::cout << this->name;
     std::cout << " created.";
+    std::cout << " [HP : ";
+    std::cout << this->hitPoints;
+    std::cout << ", EP : ";
+    std::cout << this->energyPoints;
+    std::cout << ", AD : ";
+    std::cout << this->attackDamage;
+    std::cout << "]";
     std::cout << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(100, 50, 20, name) {
+ScavTrap::ScavTrap(std::string name) {
+    this->ScavTrap::name = name;
+    this->ScavTrap::hitPoints = 100;
+    this->ScavTrap::energyPoints = 50;
+    this->ScavTrap::attackDamage = 20;
+
     std::cout << "ScavTrap ";
     std::cout << this->name;
     std::cout << " created.";
+    std::cout << " [HP : ";
+    std::cout << this->hitPoints;
+    std::cout << ", EP : ";
+    std::cout << this->energyPoints;
+    std::cout << ", AD : ";
+    std::cout << this->attackDamage;
+    std::cout << "]";
     std::cout << std::endl;
 }
 
 ScavTrap::ScavTrap(int hitPoints, int energyPoints, int attackDamage,
-                   std::string name)
-    : ClapTrap(hitPoints, energyPoints, attackDamage, name) {
+                   std::string name) {
+    this->ScavTrap::name = name;
+    this->ScavTrap::hitPoints = hitPoints;
+    this->ScavTrap::energyPoints = energyPoints;
+    this->ScavTrap::attackDamage = attackDamage;
+
     std::cout << "ScavTrap ";
     std::cout << this->name;
     std::cout << " created.";
+    std::cout << " [HP : ";
+    std::cout << this->hitPoints;
+    std::cout << ", EP : ";
+    std::cout << this->energyPoints;
+    std::cout << ", AD : ";
+    std::cout << this->attackDamage;
+    std::cout << "]";
     std::cout << std::endl;
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaehayi <jaehayi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 09:02:35 by jaehayi           #+#    #+#             */
-/*   Updated: 2022/04/07 09:30:11 by jaehayi          ###   ########.fr       */
+/*   Updated: 2022/04/14 16:30:21 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,13 @@ ClapTrap::ClapTrap(void)
     std::cout << "ClapTrap ";
     std::cout << this->name;
     std::cout << " created.";
+    std::cout << " [HP : ";
+    std::cout << this->hitPoints;
+    std::cout << ", EP : ";
+    std::cout << this->energyPoints;
+    std::cout << ", AD : ";
+    std::cout << this->attackDamage;
+    std::cout << "]";
     std::cout << std::endl;
 }
 
@@ -25,6 +32,13 @@ ClapTrap::ClapTrap(std::string name)
     std::cout << "ClapTrap ";
     std::cout << this->name;
     std::cout << " created.";
+    std::cout << " [HP : ";
+    std::cout << this->hitPoints;
+    std::cout << ", EP : ";
+    std::cout << this->energyPoints;
+    std::cout << ", AD : ";
+    std::cout << this->attackDamage;
+    std::cout << "]";
     std::cout << std::endl;
 }
 
@@ -42,6 +56,13 @@ ClapTrap::ClapTrap(int hitPoints, int energyPoints, int attackDamage,
     std::cout << "ClapTrap ";
     std::cout << this->name;
     std::cout << " created.";
+    std::cout << " [HP : ";
+    std::cout << this->hitPoints;
+    std::cout << ", EP : ";
+    std::cout << this->energyPoints;
+    std::cout << ", AD : ";
+    std::cout << this->attackDamage;
+    std::cout << "]";
     std::cout << std::endl;
 }
 

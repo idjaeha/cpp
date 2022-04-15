@@ -3,35 +3,70 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaehayi <jaehayi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 09:44:09 by jaehayi           #+#    #+#             */
-/*   Updated: 2022/04/07 12:47:44 by jaehayi          ###   ########.fr       */
+/*   Updated: 2022/04/14 19:55:59 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(void) : ClapTrap(100, 100, 30, "Unknown") {
+FragTrap::FragTrap(void) {
+    this->FragTrap::name = "Unknown";
+    this->FragTrap::hitPoints = 100;
+    this->FragTrap::energyPoints = 100;
+    this->FragTrap::attackDamage = 30;
+
     std::cout << "FragTrap ";
     std::cout << this->name;
     std::cout << " created.";
+    std::cout << " [HP : ";
+    std::cout << this->hitPoints;
+    std::cout << ", EP : ";
+    std::cout << this->energyPoints;
+    std::cout << ", AD : ";
+    std::cout << this->attackDamage;
+    std::cout << "]";
     std::cout << std::endl;
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(100, 100, 30, name) {
+FragTrap::FragTrap(std::string name) {
+    this->FragTrap::name = name;
+    this->FragTrap::hitPoints = 100;
+    this->FragTrap::energyPoints = 100;
+    this->FragTrap::attackDamage = 30;
+
     std::cout << "FragTrap ";
     std::cout << this->name;
     std::cout << " created.";
+    std::cout << " [HP : ";
+    std::cout << this->hitPoints;
+    std::cout << ", EP : ";
+    std::cout << this->energyPoints;
+    std::cout << ", AD : ";
+    std::cout << this->attackDamage;
+    std::cout << "]";
     std::cout << std::endl;
 }
 
 FragTrap::FragTrap(int hitPoints, int energyPoints, int attackDamage,
-                   std::string name)
-    : ClapTrap(hitPoints, energyPoints, attackDamage, name) {
+                   std::string name) {
+    this->FragTrap::name = name;
+    this->FragTrap::hitPoints = hitPoints;
+    this->FragTrap::energyPoints = energyPoints;
+    this->FragTrap::attackDamage = attackDamage;
+
     std::cout << "FragTrap ";
     std::cout << this->name;
     std::cout << " created.";
+    std::cout << " [HP : ";
+    std::cout << this->hitPoints;
+    std::cout << ", EP : ";
+    std::cout << this->energyPoints;
+    std::cout << ", AD : ";
+    std::cout << this->attackDamage;
+    std::cout << "]";
     std::cout << std::endl;
 }
 
