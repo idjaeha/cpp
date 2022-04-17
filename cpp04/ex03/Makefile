@@ -6,22 +6,26 @@
 #    By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/14 10:00:12 by jayi              #+#    #+#              #
-#    Updated: 2022/04/15 18:02:07 by jayi             ###   ########.fr        #
+#    Updated: 2022/04/17 17:41:12 by jayi             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=a.out
 CPPFLAGS=-Wall -Wextra -Werror -std=c++98 
 SRC=main.cpp\
-	Animal.cpp\
-	Cat.cpp\
-	Dog.cpp\
-	Brain.cpp
+	Ice.cpp\
+	Cure.cpp\
+	Character.cpp\
+	AMateria.cpp\
+	MateriaSource.cpp
 
-HEADER=Animal.hpp\
-		Cat.hpp\
-		Dog.hpp\
-		Brain.hpp
+HEADER=Ice.hpp\
+		Cure.hpp\
+		Character.hpp\
+		AMateria.hpp\
+		MateriaSource.hpp\
+		ICharacter.hpp\
+		IMateriaSource.hpp
 
 OBJ= $(SRC:.cpp=.o)
 
