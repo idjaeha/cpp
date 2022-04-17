@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 23:58:58 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/18 00:47:50 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/18 01:11:36 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ PresidentialPardonForm::operator=(const PresidentialPardonForm &ref) {
 void PresidentialPardonForm::execute(const Bureaucrat &bureaucrat) const {
     this->Form::checkExecutable(bureaucrat);
     std::cout << this->target;
-    std::cout << "has been pardoned by Zaphod Beeblebrox." << std::endl;
+    std::cout << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }
