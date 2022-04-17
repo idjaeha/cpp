@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 20:33:10 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/17 23:26:23 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/18 01:07:02 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,21 @@ void Bureaucrat::signForm(Form &form) {
         std::cout << " because \"";
         std::cout << e.what();
         std::cout << "\"" << std::endl;
+    }
+}
+
+void Bureaucrat::executeForm(Form const &form) {
+    try {
+        form.execute(*this);
+        std::cout << this->name;
+        std::cout << " executed ";
+        std::cout << form.getName() << std::endl;
+    } catch (std::exception &e) {
+        std::cout << this->name;
+        std::cout << " couldn't executed ";
+        std::cout << form.getName();
+        std::cout << " because \"";
+        std::cerr << e.what() << "\"" << std::endl;
     }
 }
 

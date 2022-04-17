@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 20:08:32 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/17 23:15:58 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/18 00:58:55 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class Bureaucrat {
     void promote(void);
     void demote(void);
     void signForm(Form &form);
+    void executeForm(Form const &form);
 
     class GradeTooHighException : public std::exception {
       public:

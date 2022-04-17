@@ -6,74 +6,65 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 21:11:51 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/17 23:23:29 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/18 01:05:41 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main(void) {
     {
         std::cout << "\n일반적인 상황," << std::endl;
+        Bureaucrat bureaucrat("jayi", 1);
+
+        PresidentialPardonForm ppf("ppf");
+        RobotomyRequestForm rrf("rrf");
+        ShrubberyCreationForm scf("scf");
+
+        bureaucrat.signForm(ppf);
+        bureaucrat.signForm(rrf);
+        bureaucrat.signForm(scf);
+
+        bureaucrat.executeForm(ppf);
+        bureaucrat.executeForm(rrf);
+        bureaucrat.executeForm(scf);
+    }
+
+    {
+        std::cout << "\nsign이 안되는 상황" << std::endl;
         Bureaucrat bureaucrat;
-        Form form;
-        std::cout << bureaucrat << std::endl;
-        std::cout << form << std::endl;
+
+        PresidentialPardonForm ppf("ppf");
+        RobotomyRequestForm rrf("rrf");
+        ShrubberyCreationForm scf("scf");
+
+        bureaucrat.signForm(ppf);
+        bureaucrat.signForm(rrf);
+        bureaucrat.signForm(scf);
+
+        bureaucrat.executeForm(ppf);
+        bureaucrat.executeForm(rrf);
+        bureaucrat.executeForm(scf);
     }
 
     {
-        std::cout << "\nform sign grade가 0인 상황" << std::endl;
-        Bureaucrat bureaucrat;
-        try {
-            Form form("jayi", 0, 150);
+        std::cout << "\ngrade가 46인 경우" << std::endl;
+        Bureaucrat bureaucrat("jayi2", 46);
 
-            std::cout << bureaucrat << std::endl;
-            std::cout << form << std::endl;
-        } catch (std::exception &e) {
-            std::cerr << e.what() << std::endl;
-        }
-    }
+        PresidentialPardonForm ppf("ppf");
+        RobotomyRequestForm rrf("rrf");
+        ShrubberyCreationForm scf("scf");
 
-    {
-        std::cout << "\nform sign grade가 151인 상황" << std::endl;
-        Bureaucrat bureaucrat;
-        try {
-            Form form("jayi", 151, 150);
+        bureaucrat.signForm(ppf);
+        bureaucrat.signForm(rrf);
+        bureaucrat.signForm(scf);
 
-            std::cout << bureaucrat << std::endl;
-            std::cout << form << std::endl;
-        } catch (std::exception &e) {
-            std::cerr << e.what() << std::endl;
-        }
-    }
-
-    {
-        std::cout << "\nsign이 가능한 상황" << std::endl;
-        try {
-            Bureaucrat bureaucrat("jayi", 100);
-            Form form("jayi's form", 110, 150);
-
-            std::cout << bureaucrat << std::endl;
-            std::cout << form << std::endl;
-
-            bureaucrat.signForm(form);
-        } catch (std::exception &e) {
-            std::cerr << e.what() << std::endl;
-        }
-    }
-
-    {
-        std::cout << "\nsign이 불가능한 상황" << std::endl;
-        try {
-            Bureaucrat bureaucrat("jayi", 150);
-            Form form("jayi's form", 110, 150);
-
-            std::cout << bureaucrat << std::endl;
-            std::cout << form << std::endl;
-
-            bureaucrat.signForm(form);
-        } catch (std::exception &e) {
-            std::cerr << e.what() << std::endl;
-        }
+        bureaucrat.executeForm(ppf);
+        bureaucrat.executeForm(rrf);
+        bureaucrat.executeForm(scf);
     }
 }

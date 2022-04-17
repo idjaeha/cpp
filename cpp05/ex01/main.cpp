@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 21:11:51 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/17 23:23:29 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/18 00:56:30 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int main(void) {
         std::cout << "\n일반적인 상황," << std::endl;
         Bureaucrat bureaucrat;
         Form form;
+
         std::cout << bureaucrat << std::endl;
         std::cout << form << std::endl;
     }

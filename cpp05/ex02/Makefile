@@ -6,17 +6,23 @@
 #    By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/14 10:00:12 by jayi              #+#    #+#              #
-#    Updated: 2022/04/17 22:34:36 by jayi             ###   ########.fr        #
+#    Updated: 2022/04/18 00:01:13 by jayi             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=a.out
 CPPFLAGS=-Wall -Wextra -Werror -std=c++98 
 SRC=main.cpp\
+	PresidentialPardonForm.cpp\
+	RobotomyRequestForm.cpp\
+	ShrubberyCreationForm.cpp\
 	Bureaucrat.cpp\
 	Form.cpp
 
 HEADER=Bureaucrat.hpp\
+	PresidentialPardonForm.hpp\
+	RobotomyRequestForm.hpp\
+	ShrubberyCreationForm.hpp\
 	Form.hpp
 
 OBJ= $(SRC:.cpp=.o)

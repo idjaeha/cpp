@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 22:19:56 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/17 23:19:49 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/18 01:02:32 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,13 @@ Form &Form::operator=(const Form &ref) {
     return *this;
 }
 
+void Form::checkExecutable(const Bureaucrat &ref) const {
+    if (this->isSigned == false)
+        throw Form::NotSignedException();
+    if (ref.getGrade() > this->executeGrade)
+        throw Form::GradeTooLowException();
+}
+
 std::ostream &operator<<(std::ostream &os, const Form &ref) {
     os << ref.getName();
     os << ", form, is signed : ";
@@ -74,4 +81,8 @@ const char *Form::GradeTooHighException::what(void) const throw() {
 
 const char *Form::GradeTooLowException::what(void) const throw() {
     return "grade too low.";
+}
+
+const char *Form::NotSignedException::what(void) const throw() {
+    return "form is not signed.";
 }
