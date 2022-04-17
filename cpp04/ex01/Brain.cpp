@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 17:56:08 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/15 18:07:08 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/17 14:44:15 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,19 @@ Brain &Brain::operator=(const Brain &ref) {
 
 Brain::Brain(const Brain &ref) {
     std::cout << "Brain copy constructor." << std::endl;
+    for (int idx = 0; idx < 100; idx++)
+        this->ideas[idx] = "";
     *this = ref;
+}
+
+void Brain::setIdea(int index, std::string idea) {
+    if (!(0 <= index && index < 100))
+        return;
+    this->ideas[index] = idea;
+}
+
+void Brain::printIdea(int index) {
+    if (!(0 <= index && index < 100))
+        return;
+    std::cout << "idea : " << this->ideas[index] << std::endl;
 }

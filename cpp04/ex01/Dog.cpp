@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 16:12:07 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/15 18:06:21 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/17 14:49:16 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ Dog &Dog::operator=(const Dog &ref) {
     std::cout << " copy assignment operator." << std::endl;
     if (this != &ref) {
         this->type = ref.type;
+        *(this->brain) = *(ref.brain);
     }
     return *this;
 }
@@ -35,10 +36,16 @@ Dog &Dog::operator=(const Dog &ref) {
 Dog::Dog(const Dog &ref) {
     std::cout << type;
     std::cout << " copy constructor." << std::endl;
+    this->brain = new Brain(*ref.brain);
     *this = ref;
 }
 
 void Dog::makeSound(void) const {
     std::cout << this->type;
     std::cout << " : dog sound~~!" << std::endl;
+}
+
+void Dog::printIdea(int index) const { this->brain->printIdea(index); }
+void Dog::setIdea(int index, std::string idea) const {
+    this->brain->setIdea(index, idea);
 }

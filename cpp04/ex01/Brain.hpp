@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 17:56:06 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/15 18:07:22 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/17 14:44:07 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ class Brain {
     ~Brain();
     Brain &operator=(const Brain &ref);
     Brain(const Brain &ref);
+
+    void setIdea(int index, std::string idea);
+    void printIdea(int index);
 };
 
 #endif

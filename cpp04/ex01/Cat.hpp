@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 16:12:24 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/15 18:03:44 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/17 14:44:24 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ class Cat : public Animal {
     Cat(const Cat &ref);
 
     void makeSound(void) const;
+    void printIdea(int index) const;
+    void setIdea(int index, std::string idea) const;
 };
 
 #endif
