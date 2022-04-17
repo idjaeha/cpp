@@ -6,7 +6,7 @@
 #    By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/14 10:00:12 by jayi              #+#    #+#              #
-#    Updated: 2022/04/18 01:35:33 by jayi             ###   ########.fr        #
+#    Updated: 2022/04/18 01:35:12 by jayi             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,12 +17,14 @@ SRC=main.cpp\
 	RobotomyRequestForm.cpp\
 	ShrubberyCreationForm.cpp\
 	Bureaucrat.cpp\
+	Intern.cpp\
 	Form.cpp
 
 HEADER=Bureaucrat.hpp\
 	PresidentialPardonForm.hpp\
 	RobotomyRequestForm.hpp\
 	ShrubberyCreationForm.hpp\
+	Intern.hpp\
 	Form.hpp
 
 OBJ= $(SRC:.cpp=.o)
