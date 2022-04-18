@@ -6,15 +6,28 @@
 #    By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/14 10:00:12 by jayi              #+#    #+#              #
-#    Updated: 2022/04/18 21:05:48 by jayi             ###   ########.fr        #
+#    Updated: 2022/04/18 21:13:16 by jayi             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=a.out
 CPPFLAGS=-Wall -Wextra -Werror -std=c++98 
-SRC=main.cpp
+SRC=main.cpp\
+	Number.cpp\
+	Parser.cpp\
+	Float.cpp\
+	Int.cpp\
+	Double.cpp\
+	Char.cpp\
+	Info.cpp
 
-HEADER=
+HEADER=	Number.hpp\
+		Parser.hpp\
+		Float.hpp\
+		Int.hpp\
+		Double.hpp\
+		Char.hpp\
+		Info.hpp
 
 OBJ= $(SRC:.cpp=.o)
 
