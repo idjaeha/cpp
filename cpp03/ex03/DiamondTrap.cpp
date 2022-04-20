@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 11:39:31 by jaehayi           #+#    #+#             */
-/*   Updated: 2022/04/20 16:23:05 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/20 16:58:42 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &ref) {
         this->ScavTrap::energyPoints = ref.ScavTrap::energyPoints;
         this->FragTrap::attackDamage = ref.FragTrap::attackDamage;
         this->name = ref.name;
+        this->ClapTrap::name = ref.ClapTrap::name;
     }
     return *this;
 }
