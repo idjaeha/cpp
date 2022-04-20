@@ -1,38 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 02:04:00 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/19 02:12:12 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/19 22:33:03 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_H
-#define WHATEVER_H
+#ifndef EASYFIND_H
+#define EASYFIND_H
 
-template <typename T> void swap(T &a, T &b) {
-    T temp;
+#include <algorithm>
 
-    temp = a;
-    a = b;
-    b = temp;
-}
-
-template <typename T> const T max(const T &a, const T &b) {
-    if (a > b)
-        return a;
-    else
-        return b;
-}
-
-template <typename T> const T min(const T &a, const T &b) {
-    if (a < b)
-        return a;
-    else
-        return b;
-}
-
+template <typename T> class MutantStack {};
 #endif

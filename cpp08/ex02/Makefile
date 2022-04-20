@@ -6,7 +6,7 @@
 #    By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/14 10:00:12 by jayi              #+#    #+#              #
-#    Updated: 2022/04/19 21:29:57 by jayi             ###   ########.fr        #
+#    Updated: 2022/04/19 22:42:27 by jayi             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME=a.out
 CPPFLAGS=-Wall -Wextra -Werror -std=c++98 
 SRC=main.cpp
 
-HEADER=	easyfind.hpp
+HEADER=	MutantStack.hpp
 
 OBJ= $(SRC:.cpp=.o)
 
