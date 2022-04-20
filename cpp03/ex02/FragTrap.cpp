@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaehayi <jaehayi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 09:44:09 by jaehayi           #+#    #+#             */
-/*   Updated: 2022/04/07 09:48:08 by jaehayi          ###   ########.fr       */
+/*   Updated: 2022/04/20 16:15:01 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,27 +61,4 @@ FragTrap::~FragTrap() {
 void FragTrap::highFivesGuys(void) {
     std::cout << "FragTrap high fives guys!";
     std::cout << std::endl;
-}
-
-void FragTrap::attack(const std::string &target) {
-    if (this->energyPoints > 0 && this->hitPoints > 0) {
-        std::cout << "FragTrap ";
-        std::cout << this->name;
-        std::cout << " attacks ";
-        std::cout << target;
-        std::cout << ", causing ";
-        std::cout << this->attackDamage;
-        std::cout << " points of damage!";
-
-        int prev = this->energyPoints--;
-        std::cout << " [EP : ";
-        std::cout << prev;
-        std::cout << " -> ";
-        std::cout << this->energyPoints;
-        std::cout << "]";
-        std::cout << std::endl;
-    } else {
-        std::cout << "Nothing happened. (Attack)";
-        std::cout << std::endl;
-    }
 }

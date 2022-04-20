@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 11:39:31 by jaehayi           #+#    #+#             */
-/*   Updated: 2022/04/20 15:53:44 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/20 16:23:05 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,16 @@
 DiamondTrap::DiamondTrap(void) {
     this->name = "Unknown";
     this->ClapTrap::name = this->name + "_clap_name";
-    this->hitPoints = this->FragTrap::hitPoints;
-    this->energyPoints = this->ScavTrap::energyPoints;
-    this->attackDamage = this->FragTrap::attackDamage;
 
     std::cout << "DiamondTrap ";
     std::cout << this->name;
     std::cout << " created.";
     std::cout << " [HP : ";
-    std::cout << this->hitPoints;
+    std::cout << this->FragTrap::hitPoints;
     std::cout << ", EP : ";
-    std::cout << this->energyPoints;
+    std::cout << this->ScavTrap::energyPoints;
     std::cout << ", AD : ";
-    std::cout << this->attackDamage;
+    std::cout << this->FragTrap::attackDamage;
     std::cout << "]";
     std::cout << std::endl;
 }
@@ -36,19 +33,16 @@ DiamondTrap::DiamondTrap(std::string name)
     : ClapTrap(name), ScavTrap(name), FragTrap(name) {
     this->name = name;
     this->ClapTrap::name = name + "_clap_name";
-    this->hitPoints = this->FragTrap::hitPoints;
-    this->energyPoints = this->ScavTrap::energyPoints;
-    this->attackDamage = this->FragTrap::attackDamage;
 
     std::cout << "DiamondTrap ";
     std::cout << this->name;
     std::cout << " created.";
     std::cout << " [HP : ";
-    std::cout << this->hitPoints;
+    std::cout << this->FragTrap::hitPoints;
     std::cout << ", EP : ";
-    std::cout << this->energyPoints;
+    std::cout << this->ScavTrap::energyPoints;
     std::cout << ", AD : ";
-    std::cout << this->attackDamage;
+    std::cout << this->FragTrap::attackDamage;
     std::cout << "]";
     std::cout << std::endl;
 }
@@ -62,9 +56,9 @@ DiamondTrap::DiamondTrap(const DiamondTrap &ref)
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &ref) {
     std::cout << "DiamondTrap copy assignment operator." << std::endl;
     if (this != &ref) {
-        this->hitPoints = ref.hitPoints;
-        this->energyPoints = ref.energyPoints;
-        this->attackDamage = ref.attackDamage;
+        this->FragTrap::hitPoints = ref.FragTrap::hitPoints;
+        this->ScavTrap::energyPoints = ref.ScavTrap::energyPoints;
+        this->FragTrap::attackDamage = ref.FragTrap::attackDamage;
         this->name = ref.name;
     }
     return *this;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaehayi <jaehayi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 09:44:24 by jaehayi           #+#    #+#             */
-/*   Updated: 2022/04/07 09:51:30 by jaehayi          ###   ########.fr       */
+/*   Updated: 2022/04/20 16:14:22 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ class FragTrap : public ClapTrap {
     ~FragTrap();
 
     void highFivesGuys(void);
-    void attack(const std::string &target);
 };
 
 #endif
