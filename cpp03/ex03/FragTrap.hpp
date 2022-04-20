@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 09:44:24 by jaehayi           #+#    #+#             */
-/*   Updated: 2022/04/14 20:14:20 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/20 15:51:11 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 #include "ClapTrap.hpp"
 
 class FragTrap : virtual public ClapTrap {
+  protected:
+    int hitPoints;
+    int energyPoints;
+    int attackDamage;
+    std::string name;
+
   public:
     FragTrap(void);
     FragTrap(int hitPoints, int energyPoints, int attackDamage,

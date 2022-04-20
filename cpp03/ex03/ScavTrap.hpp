@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 08:14:59 by jaehayi           #+#    #+#             */
-/*   Updated: 2022/04/14 20:14:18 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/20 15:52:31 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 #include "ClapTrap.hpp"
 
 class ScavTrap : virtual public ClapTrap {
+  protected:
+    int hitPoints;
+    int energyPoints;
+    int attackDamage;
+    std::string name;
+
   public:
     ScavTrap(void);
     ScavTrap(int hitPoints, int energyPoints, int attackDamage,
