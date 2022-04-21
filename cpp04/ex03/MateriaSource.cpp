@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 17:12:30 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/17 20:33:05 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/21 18:17:17 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &ref) {
     // std::cout << "MateriaSource copy assignment constructor!!" << std::endl;
     if (this != &ref) {
         for (int idx = 0; idx < this->size; idx++) {
+            delete this->materias[idx];
             if (ref.materias[idx]->getType() == "ice")
                 this->materias[idx] = new Ice();
             else if (ref.materias[idx]->getType() == "cure")
                 this->materias[idx] = new Cure();
             else
                 this->materias[idx] = NULL;
-            delete this->materias[idx];
         }
     }
     return *this;

@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 16:14:35 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/21 16:18:21 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/21 18:17:57 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,13 @@ Character &Character::operator=(const Character &ref) {
         this->name = ref.name;
 
         for (int idx = 0; idx < this->size; idx++) {
+            delete this->materias[idx];
             if (ref.materias[idx]->getType() == "ice")
                 this->materias[idx] = new Ice();
             else if (ref.materias[idx]->getType() == "cure")
                 this->materias[idx] = new Cure();
             else
                 this->materias[idx] = NULL;
-            delete this->materias[idx];
         }
     }
     return *this;
@@ -82,16 +82,10 @@ void Character::unequip(int idx) {
         materias[cur] = materias[cur + 1];
     }
     size--;
-    for (int cur = size; cur < 4; cur++) {
-        materias[cur] = NULL;
-    }
 }
 
 void Character::use(int idx, ICharacter &target) {
-    if (!(0 <= idx && idx < 4)) {
-        return;
-    }
-    if (materias[idx] == NULL) {
+    if (!(0 <= idx && idx < size)) {
         return;
     }
     materias[idx]->use(target);
