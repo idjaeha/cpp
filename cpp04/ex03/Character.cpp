@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 16:14:35 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/17 17:47:45 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/21 16:18:21 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,13 @@ void Character::equip(AMateria *m) {
     if (size >= 4) {
         return;
     }
+    if (m == NULL) {
+        return;
+    }
     materias[size] = m;
     size++;
 }
+
 void Character::unequip(int idx) {
     if (size <= 0) {
         return;
@@ -78,9 +82,16 @@ void Character::unequip(int idx) {
         materias[cur] = materias[cur + 1];
     }
     size--;
+    for (int cur = size; cur < 4; cur++) {
+        materias[cur] = NULL;
+    }
 }
+
 void Character::use(int idx, ICharacter &target) {
     if (!(0 <= idx && idx < 4)) {
+        return;
+    }
+    if (materias[idx] == NULL) {
         return;
     }
     materias[idx]->use(target);
