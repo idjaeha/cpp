@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 21:11:51 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/18 01:35:36 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/21 18:31:20 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,17 @@ int main(void) {
     ppf = someRandomIntern.makeForm("presidential pardon", "Bender2");
     scf = someRandomIntern.makeForm("shrubbery creation", "Bender3");
 
-    bureaucrat.signForm(*rrf);
-    bureaucrat.signForm(*ppf);
-    bureaucrat.signForm(*scf);
+    if (rrf != NULL)
+        bureaucrat.signForm(*rrf);
+    if (ppf != NULL)
+        bureaucrat.signForm(*ppf);
+    if (scf != NULL)
+        bureaucrat.signForm(*scf);
 
-    bureaucrat.executeForm(*rrf);
-    bureaucrat.executeForm(*ppf);
-    bureaucrat.executeForm(*scf);
+    if (rrf != NULL)
+        bureaucrat.executeForm(*rrf);
+    if (ppf != NULL)
+        bureaucrat.executeForm(*ppf);
+    if (scf != NULL)
+        bureaucrat.executeForm(*scf);
 }
