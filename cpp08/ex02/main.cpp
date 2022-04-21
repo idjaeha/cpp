@@ -6,13 +6,12 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 01:15:41 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/20 03:16:44 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/22 01:47:27 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
 #include <iostream>
-#include <vector>
 
 int main(void) {
     MutantStack<int> mstack;
