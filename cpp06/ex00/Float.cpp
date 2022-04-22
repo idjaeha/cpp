@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Float.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 22:22:15 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/19 00:37:25 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/22 14:02:15 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void Float::print(void) {
 
     if (info->special == "nan") {
         std::cout << "nanf" << std::endl;
+    } else if (info->integer == 0 && info->decimal == 0) {
+        std::cout << "0.0f" << std::endl;
     } else if (info->special != "" ||
                !((std::numeric_limits<float>::min() <= signedDouble &&
                   signedDouble <= std::numeric_limits<float>::max()) ||
@@ -46,7 +48,10 @@ void Float::print(void) {
     } else {
         float temp = signedDouble;
 
-        std::cout << std::showpoint << temp << std::noshowpoint << "f"
-                  << std::endl;
+        std::cout << temp;
+        if (this->info->decimal == 0) {
+            std::cout << ".0";
+        }
+        std::cout << "f" << std::endl;
     }
 }

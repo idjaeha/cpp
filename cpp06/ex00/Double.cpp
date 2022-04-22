@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Double.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 22:22:30 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/18 23:58:50 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/22 14:02:03 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void Double::print(void) {
 
     if (info->special == "nan") {
         std::cout << "nan" << std::endl;
+    } else if (info->integer == 0 && info->decimal == 0) {
+        std::cout << "0.0" << std::endl;
     } else if (info->special != "" ||
                !((std::numeric_limits<double>::min() <= signedDouble &&
                   signedDouble <= std::numeric_limits<double>::max()) ||
@@ -46,6 +48,10 @@ void Double::print(void) {
     } else {
         double temp = signedDouble;
 
-        std::cout << std::showpoint << temp << std::noshowpoint << std::endl;
+        std::cout << temp;
+        if (this->info->decimal == 0) {
+            std::cout << ".0";
+        }
+        std::cout << std::endl;
     }
 }
