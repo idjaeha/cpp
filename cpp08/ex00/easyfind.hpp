@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 02:04:00 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/22 16:00:22 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/22 20:49:23 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,10 @@
 
 #include <algorithm>
 
-class NotFoundException : public std::exception {
-    virtual const char *what(void) const throw() { return "number not fonud."; }
-};
-
 template <typename T> typename T::iterator easyfind(T &container, int num) {
     typename T::iterator iter =
         std::find(container.begin(), container.end(), num);
-    if (iter == container.end())
-        throw NotFoundException();
+
     return iter;
 }
 
