@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 01:15:41 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/19 01:59:31 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/22 16:12:29 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,13 @@ Base *generate(void) {
 void identify(Base *p) {
     if (dynamic_cast<A *>(p) != NULL) {
         std::cout << "A" << std::endl;
+        return;
     } else if (dynamic_cast<B *>(p) != NULL) {
         std::cout << "B" << std::endl;
+        return;
     } else if (dynamic_cast<C *>(p) != NULL) {
         std::cout << "C" << std::endl;
+        return;
     }
 }
 
@@ -44,16 +47,19 @@ void identify(Base &p) {
     try {
         (void)dynamic_cast<A &>(p);
         std::cout << "A" << std::endl;
+        return;
     } catch (std::exception &e) {
     }
     try {
         (void)dynamic_cast<B &>(p);
         std::cout << "B" << std::endl;
+        return;
     } catch (std::exception &e) {
     }
     try {
         (void)dynamic_cast<C &>(p);
         std::cout << "C" << std::endl;
+        return;
     } catch (std::exception &e) {
     }
 }

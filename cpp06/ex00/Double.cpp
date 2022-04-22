@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 22:22:30 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/22 14:14:52 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/22 16:04:14 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,12 @@ void Double::print(void) {
 
     if (info->special == "nan") {
         std::cout << "nan" << std::endl;
+    } else if (info->special == "inf") {
+        if (this->info->isMinus == true)
+            std::cout << "-";
+        else
+            std::cout << "+";
+        std::cout << "inf" << std::endl;
     } else if (info->integer == 0 && info->decimal == 0) {
         std::cout << "0.0" << std::endl;
     } else if (info->special != "" ||
@@ -39,12 +45,6 @@ void Double::print(void) {
                  (-std::numeric_limits<double>::max() <= signedDouble &&
                   signedDouble <= -std::numeric_limits<double>::min()))) {
         std::cout << "impossible" << std::endl;
-    } else if (info->special == "inf") {
-        if (info->isMinus == true)
-            std::cout << "-";
-        else
-            std::cout << "+";
-        std::cout << "inf" << std::endl;
     } else {
         double temp = signedDouble;
 

@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 22:22:15 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/22 14:11:56 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/22 16:04:15 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,12 @@ void Float::print(void) {
 
     if (info->special == "nan") {
         std::cout << "nanf" << std::endl;
+    } else if (info->special == "inf") {
+        if (this->info->isMinus == true)
+            std::cout << "-";
+        else
+            std::cout << "+";
+        std::cout << "inff" << std::endl;
     } else if (info->integer == 0 && info->decimal == 0) {
         std::cout << "0.0f" << std::endl;
     } else if (info->special != "" ||
@@ -39,12 +45,6 @@ void Float::print(void) {
                  (-std::numeric_limits<float>::max() <= signedDouble &&
                   signedDouble <= -std::numeric_limits<float>::min()))) {
         std::cout << "impossible" << std::endl;
-    } else if (info->special == "inf") {
-        if (info->isMinus == true)
-            std::cout << "-";
-        else
-            std::cout << "+";
-        std::cout << "inff" << std::endl;
     } else {
         float temp = signedDouble;
 

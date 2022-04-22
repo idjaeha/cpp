@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Parser.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 21:20:46 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/18 22:52:29 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/22 16:12:15 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,18 @@ Info *Parser::parse(void) {
     if (this->raw == "nan" || this->raw == "nanf") {
         info = new Info(false, false, "nan", 0, 0);
     } else if (this->raw == "-inff" || this->raw == "+inff" ||
-               this->raw == "-inf" || this->raw == "+inf") {
-        info = new Info(this->raw[0] == '+', false, "inf", 0, 0);
+               this->raw == "-inf" || this->raw == "+inf" ||
+               this->raw == "inf" || this->raw == "inff") {
+        info = new Info(this->raw[0] == '-', false, "inf", 0, 0);
+    } else if (this->raw[0] == '\'') {
+        if (this->raw[1] == '\0') {
+            throw InvalidArgException();
+        }
+        if (this->raw[2] != '\'') {
+            throw InvalidArgException();
+        }
+
+        info = new Info(false, false, "", raw[1], 0.0);
     } else {
         bool isMinus = (this->raw[0] == '-');
         bool existsPoint = false;
