@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 22:22:15 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/22 14:02:15 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/22 14:11:56 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Float::Float(const Float &ref) { *this = ref; }
 void Float::print(void) {
     std::cout << "float: ";
 
-    double signedDouble = info->integer + info->decimal;
+    long double signedDouble = info->integer + info->decimal;
     if (this->info->isMinus == true)
         signedDouble *= -1;
 

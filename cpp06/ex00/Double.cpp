@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 22:22:30 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/22 14:02:03 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/22 14:12:02 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Double::Double(const Double &ref) { *this = ref; }
 void Double::print(void) {
     std::cout << "double: ";
 
-    double signedDouble = info->integer + info->decimal;
+    long double signedDouble = info->integer + info->decimal;
     if (this->info->isMinus == true)
         signedDouble *= -1;
 
