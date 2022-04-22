@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Info.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 22:01:53 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/18 22:53:42 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/22 14:14:46 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Info::Info(void)
     : isMinus(false), existsPoint(false), special(""), integer(0), decimal(0) {}
 
 Info::Info(bool isMinus, bool existsPoint, const std::string special,
-           long long integer, double decimal)
+           long long integer, long double decimal)
     : isMinus(isMinus), existsPoint(existsPoint), special(special),
       integer(integer), decimal(decimal) {}
 
