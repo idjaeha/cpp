@@ -3,14 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 21:40:45 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/19 22:28:18 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/25 19:11:31 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
+
+void ft_sort(std::vector<int>::iterator begin, std::vector<int>::iterator end) {
+    int l = 0, r = (end - begin) - 1;
+    if (l >= r)
+        return;
+    int mid = begin[(l + r) / 2];
+    while (l <= r) {
+        while (begin[l] < mid)
+            ++l;
+        while (mid < begin[r])
+            --r;
+        if (l <= r) {
+            int temp = begin[l];
+            begin[l] = begin[r];
+            begin[r] = temp;
+            l++;
+            r--;
+        }
+    }
+    ft_sort(begin, begin + l);
+    ft_sort(begin + l, end);
+}
 
 Span::Span(void) : capacity(0), maxValue(INT32_MIN), minValue(INT32_MAX) {}
 
@@ -45,9 +67,13 @@ void Span::initRandomNumbers(void) {
         throw NotEnoughException();
     srand(time(NULL));
     std::vector<int> tmp(this->capacity);
-    std::generate(tmp.begin(), tmp.end(), random);
+    for (std::vector<int>::iterator iter = tmp.begin(); iter != tmp.end();
+         iter++) {
+        *iter = rand();
+    }
 
-    std::sort(tmp.begin(), tmp.end());
+    ft_sort(tmp.begin(), tmp.end());
+
     this->vec = tmp;
     this->minValue = *tmp.begin();
     this->maxValue = *(tmp.end() - 1);
@@ -59,7 +85,7 @@ long long Span::shortestSpan(void) {
     }
     long long minSpan = (long long)INT32_MAX - (long long)INT32_MIN;
 
-    std::sort(this->vec.begin(), this->vec.end());
+    ft_sort(this->vec.begin(), this->vec.end());
 
     for (std::vector<int>::iterator iter = this->vec.begin();
          iter != this->vec.end() - 1; iter++) {

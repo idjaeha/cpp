@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 01:15:41 by jayi              #+#    #+#             */
-/*   Updated: 2022/04/19 22:31:03 by jayi             ###   ########.fr       */
+/*   Updated: 2022/04/25 19:07:13 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,20 @@ int main(void) {
             sp.addNumber(3);
             sp.addNumber(5);
             sp.addNumber(5);
+
+            std::cout << sp.shortestSpan() << std::endl;
+            std::cout << sp.longestSpan() << std::endl;
+        } catch (std::exception &e) {
+            std::cerr << e.what() << std::endl;
+        }
+    }
+
+    std::cout << "\n50개가 들어간 상황" << std::endl;
+    {
+        Span sp = Span(50);
+
+        try {
+            sp.initRandomNumbers();
 
             std::cout << sp.shortestSpan() << std::endl;
             std::cout << sp.longestSpan() << std::endl;
